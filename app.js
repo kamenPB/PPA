@@ -1,5 +1,5 @@
 const http = require('http');
-var axios = require("axios").default;
+var axios = require("axios")
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -15,13 +15,16 @@ server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 
+var region = "US" // example region
+var ticker = "AAPL"; // example symbol
+
 var options = {
   method: 'GET',
   url: 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-quotes',
-  params: {region: 'US', symbols: 'TTCF'},
+  params: {region: region, symbols: ticker},
   headers: {
     'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-    'x-rapidapi-key': 'bf82456de9msh063e66a6701afeep1ca3fbjsnd359d0649e59'
+    'x-rapidapi-key': '6e8d9f8582msheb8b219acbbb505p19b531jsn2c2ae3b594a4'
   }
 };
 
